@@ -8,11 +8,11 @@ let news = document.querySelector("#menu-news-toggle");
 let menuNews = document.querySelector("#menu-news");
 /* OPEN FIRST BAR + closes everything*/
 menuToggle.onclick = function () {
-  menuToggle.classList.toggle("open");
   if (menuToggle.className === "open") {
     menuHome.classList.remove("active");
     menuNews.classList.remove("active");
   }
+  menuToggle.classList.toggle("open");
 }
 /*OPEN HOME SECONDBAR */
 home.onclick = function () {

@@ -15,18 +15,27 @@ html {
 }
 a,
 a:visited {
-  color: black;
   text-decoration: none;
 }
+
 /* HEADER + BAR */
 body header {
   position: fixed;
   width: 100%;
   height: 80px;
-  background-color: var(--main-bg-color);
+  background: rgb(12, 127, 161);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 127, 161, 1) 0%,
+    rgba(55, 164, 196, 1) 30%,
+    rgba(241, 118, 76, 1) 70%,
+    rgba(232, 77, 49, 1) 100%
+  );
   z-index: 2;
+  border-bottom: 1px solid black;
+  box-shadow: 0 2px 10px #000000;
 }
-body header nav {
+body {
   font-family: "Oswald", sans-serif;
   font-size: 3rem;
   text-transform: uppercase;
@@ -80,7 +89,7 @@ body header nav {
   margin: 0;
   padding: 10px 20px;
   list-style: none;
-  background-color: #eceff1;
+  background: rgb(12, 127, 161);
 }
 /* spaces and style top menu */
 .menu-box > li > div {
@@ -126,7 +135,7 @@ body header nav {
   position: fixed;
   right: -100%;
   list-style: none;
-  background-color: #eceff1;
+  background: rgb(12, 127, 161);
   padding-inline-start: 20px;
   padding-inline-end: 20px;
   padding-bottom: 2px;
@@ -140,84 +149,234 @@ body header nav {
   transition-duration: 0.25s;
 }
 
-/*DESKTOP */
-@media screen and (min-width: 1024px) {
-  #menu-toggle,
-  #menu-toggle > span {
-    display: none;
-  }
-  #rl-header {
-    left: auto;
-    right: 20px;
-    transform: none;
-  }
-  /* normal menu */
-  .menu-box,
-  #menu-toggle.open + .menu-box {
-    position: absolute;
-    width: auto;
-    top: 30px;
-    left: 0;
-    background-color: transparent;
-    font-size: 2rem;
-  }
-  .menu-box > li {
-    display: inline-block;
-    padding-right: 5px;
-  }
-  .menu-box > li > div {
-    border-bottom: 0;
-  }
-  .menu-beta-toggle:hover {
-    color: white;
-  }
-  /* sub-menu*/
-  .menu-beta {
-    visibility: hidden;
-    opacity: 0;
-    top: 80px;
-    right: auto;
-    left: 10px;
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    border: 1px solid black;
-  }
-  .menu-beta-toggle:hover + .menu-beta,
-  .menu-beta:hover {
-    visibility: visible;
-    opacity: 1;
-    transition: 0.25s ease-in;
-  }
-  .menu-beta > li {
-    border-bottom: none;
-    font-size: 1.5rem;
-    padding: 0;
-  }
-  .menu-beta-item:hover {
-    color: white;
-  }
-}
 /* HEADER FINISH */
 /* MAIN */
 /*IMAGE BACKGROUND + LOGO*/
+body main {
+  height: 100%;
+}
+/*MAIN BUTTON RULES*/
+main .button {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  position: relative;
+  left: 25%;
+  top: 30px;
+  font-size: 2rem;
+  color: #fff;
+  margin: auto;
+  bottom: 20px;
+  padding: 10px 45px;
+  background-color: var(--main-bg-color);
+  box-shadow: 2px 2px 10px #000000;
+}
 #home-image {
   position: relative;
-  top: 80px;
+  top: 0;
+  height: 500px;
   width: 100%;
-  height: 100vh;
 }
 
+/* QUICK DESCRIPTION SECTION */
+#container-info {
+  width: 100%;
+  height: auto;
+  padding: 70px 0;
+}
+#container-info .quickinfo {
+  display: block;
+  font-size: 1rem;
+  width: 400px;
+  height: auto;
+  margin: auto;
+  text-align: justify;
+  margin-top: 20px;
+}
 
+/*NEWS SECTION */
+#news-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  row-gap: 40px;
+  align-items: center;
+}
+#news-container .card {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  text-align: justify;
+  border: 1px solid black;
+  overflow: hidden;
+  box-shadow: 5px 2px 50px #000000;
+}
+.card .image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.card .image-container .news-pic {
+  position: absolute;
+  top: -40px;
+  left: -100px;
+  height: 300px;
+}
+.card .news-title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+.card .content-demo {
+  font-size: 1rem;
+  padding: 0 5px;
+}
+#news-container .button {
+  position: absolute;
+  left: 50%;
+  top: auto;
+  bottom: 20px;
+  padding: 10px 30px;
+  transform: translateX(-50%);
+}
+/* TOURNAMENTS */
+#torunament-container {
+  width: 100%;
+  height: auto;
+  padding: 70px 0;
+}
+#torunament-container .description-tourn {
+  display: block;
+  font-size: 1rem;
+  width: 400px;
+  height: auto;
+  margin: auto;
+  text-align: justify;
+  margin-top: 20px;
+}
+#torunament-container .button {
+  top: 30px;
+  margin: auto;
+  bottom: 20px;
+}
+/* PLAYERS */
+#players-container {
+  width: 100%;
+  height: auto;
+  padding: 70px 0;
+}
+#players-container .description-player {
+  display: block;
+  font-size: 1rem;
+  width: 400px;
+  height: auto;
+  margin: auto;
+  text-align: justify;
+  margin-top: 20px;
+}
+/* JOIN US */
+#join-us-container {
+  width: 100%;
+  height: auto;
+  padding: 70px 0;
+}
+#join-us-container .description-join-us {
+  display: block;
+  font-size: 1rem;
+  width: 400px;
+  height: auto;
+  margin: auto;
+  text-align: justify;
+  margin-top: 20px;
+}
+#join-us-container .button {
+  position: relative;
+  top: 30px;
+}
+/* GALLERY */
+
+/*ABOUT*/
+#about-us-container {
+  width: 100%;
+  height: auto;
+  padding: 70px 0;
+}
+#about-us-container .description-about-us {
+  display: block;
+  font-size: 1rem;
+  width: 400px;
+  height: auto;
+  margin: auto;
+  text-align: justify;
+  margin-top: 20px;
+}
+/*FOOTER*/
+footer {
+  width: 100%;
+  height: 350px;
+  background-color: #333;
+  border-top: 10px solid var(--main-bg-color);
+}
+#social-container {
+  position: relative;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 50px;
+  text-align: center;
+}
+#social-container .socials {
+  display: inline-block;
+  height: 20px;
+  padding: 0 5px;
+}
+#social-container .fa-brands {
+  color: white;
+}
+#pegi-game {
+  height: 100px;
+  right: 10px;
+  top: 100px;
+}
+#image-icons {
+  position: relative;
+  top: 40px;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  row-gap: 20px;
+}
+#psyon {
+  position: relative;
+  width: 310px;
+}
+#psyon #psyon-logo {
+  height: 120px;
+  position: absolute;
+  left: 0;
+}
+#psyon #psyon-c {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  font-size: 0.8rem;
+  color: #fff; 
+  width: 200px;
+}
 /*DESKTOP */
 @media screen and (min-width: 1024px) {
-  /*HEADER */ 
+  /*HEADER */
   #menu-toggle,
   #menu-toggle > span {
     display: none;
   }
   #rl-header {
-    left: auto;
-    right: 20px;
+    left: 20px;
     transform: none;
   }
   /* normal menu */
@@ -226,7 +385,7 @@ body header nav {
     position: absolute;
     width: auto;
     top: 30px;
-    left: 0;
+    left: 200px;
     background-color: transparent;
     font-size: 2rem;
   }
@@ -247,7 +406,12 @@ body header nav {
     top: 80px;
     right: auto;
     left: 10px;
-    background-color: var(--main-bg-color);
+    background: rgb(12, 127, 161);
+    background: linear-gradient(
+      90deg,
+      rgba(55, 164, 196, 1) 0%,
+      rgba(241, 118, 76, 1) 100%
+    );
     border-radius: 20px;
     border: 1px solid black;
   }
@@ -269,5 +433,8 @@ body header nav {
   /* MAIN */
   #home-image {
     max-height: calc(100vh - 80px);
+  }
+  #description .quickinfo {
+    margin-left: 200px;
   }
 }
