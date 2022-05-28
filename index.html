@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/normalize.css" />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="./style/normalize.css" />
+    <link rel="stylesheet" href="./style/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,22 +30,64 @@
           <li>
             <div id="menu-home-toggle" class="menu-beta-toggle">Home</div>
             <ul id="menu-home" class="menu-beta">
-              <li><a href="" class="menu-beta-item">Enter the league!</a></li>
-              <li><a href="" class="menu-beta-item">What's happening</a></li>
-              <li><a href="" class="menu-beta-item">Info Tournaments</a></li>
-              <li><a href="" class="menu-beta-item">Info Players</a></li>
-              <li><a href="" class="menu-beta-item">Info Join us</a></li>
-              <li><a href="" class="menu-beta-item">Info Gallery</a></li>
-              <li><a href="" class="menu-beta-item">Info About us</a></li>
+              <li>
+                <a href="./index.html#container-info" class="menu-beta-item"
+                  >Enter the league!</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#news-container" class="menu-beta-item"
+                  >What's happening</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./index.html#torunament-container"
+                  class="menu-beta-item"
+                  >Info Tournaments</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#players-container" class="menu-beta-item"
+                  >Info Players</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#join-us-container" class="menu-beta-item"
+                  >Info Join us</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#gallery-container" class="menu-beta-item"
+                  >Info Gallery</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#about-us-container" class="menu-beta-item"
+                  >Info About us</a
+                >
+              </li>
             </ul>
           </li>
           <li></li>
           <li>
             <div id="menu-news-toggle" class="menu-beta-toggle">News</div>
             <ul id="menu-news" class="menu-beta">
-              <li><a href="" class="menu-beta-item">NEWS 1</a></li>
-              <li><a href="" class="menu-beta-item">NEWS 2</a></li>
-              <li><a href="" class="menu-beta-item">NEWS 3</a></li>
+              <li>
+                <a href="./news.html#news-content-1" class="menu-beta-item"
+                  >NEWS 1</a
+                >
+              </li>
+              <li>
+                <a href="./news.html#news-content-2" class="menu-beta-item"
+                  >NEWS 2</a
+                >
+              </li>
+              <li>
+                <a href="./news.html#news-content-3" class="menu-beta-item"
+                  >NEWS 3</a
+                >
+              </li>
             </ul>
           </li>
           <li>
@@ -74,12 +116,19 @@
       />
     </header>
     <main>
-      <img
-        id="home-image"
-        src="./images/rocket-league-car-home.jpg"
-        alt="picture of rlcs"
-      />
+      <div id="home-video-container">
+        <video autoplay muted id="video-home">
+          <source src="./images/home-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <img
+          src="./images/rocket-league-white-writing.png"
+          alt=""
+          id="rl-home-logo"
+        />
+      </div>
       <div id="container-info">
+        <img src="./images/fluo-neon-car.png" alt="rocket league fluo neon" />
         <p class="quickinfo">
           Rocket League is a vehicular soccer video game developed and published
           by Psyonix. Described as "soccer, but with rocket-powered cars",
@@ -124,7 +173,7 @@
             June 3-5, for their share of the $75,000 in scholastic awards as
             well as the title of CRL World Champion!
           </p>
-          <a href="#" class="button">Read more</a>
+          <a href="./news.html#news-content-1" class="button">Read more</a>
         </div>
         <div class="card" id="news2">
           <div class="image-container">
@@ -143,7 +192,7 @@
             over the last five years, and we’re happy to announce new partners
             that will help us push the league even further.
           </p>
-          <a href="#" class="button">Read more</a>
+          <a href="./news.html#news-content-2" class="button">Read more</a>
         </div>
         <div class="card" id="news3">
           <div class="image-container">
@@ -161,10 +210,14 @@
             Rocket League Championship Series (RLCS) and European University
             Rocketeer Championship (EURC) tournaments.
           </p>
-          <a href="#" class="button">Read more</a>
+          <a href="./news.html#news-content-3" class="button">Read more</a>
         </div>
       </div>
-      <div id="torunament-container">
+      <div id="tournament-container">
+        <img
+          src="./images/car-blue-flames-check.png"
+          alt="car rocket league checkers"
+        />
         <p class="description-tourn">
           The Rocket League Championship Series (RLCS) 2021-22 season is here
           and bigger than ever. The world's premier professional Rocket League
@@ -190,6 +243,10 @@
         <a href="#" class="button">Learn more</a>
       </div>
       <div id="players-container">
+        <img
+          src="./images/rocket-league-green-yellow.gif"
+          alt="car rocket league brasilian"
+        />
         <p class="description-player">
           Rocket League has a relatively prominent esports scene, so there are a
           lot of Rocket League prodigies out there. Most of them are parts of
@@ -214,6 +271,7 @@
         <a href="#" class="button">Learn more</a>
       </div>
       <div id="join-us-container">
+        <img src="./images/boom-car.png" alt="rocket league car explosive" />
         <div class="description-join-us">
           If you're the owner of an active brain, a good soul, get stimulated by
           constant challenges, are committed to going the extra mile and want a
@@ -226,7 +284,26 @@
         </div>
         <a href="#" class="button">Join us !</a>
       </div>
-      <div id="gallery-container"></div>
+      <div id="gallery-container">
+        <div id="images-container">
+          <div class="img-square">
+            <img src="./images/nrg-trophy.webp" alt="" />
+          </div>
+          <div class="img-square">
+            <img src="./images/rlcs-championship.jpg" alt="" />
+          </div>
+          <div class="img-square">
+            <img src="./images/RLCS-Format-Overview.webp" alt="" />
+          </div>
+          <div class="img-square">
+            <img src="./images/rocket-league-car-news.webp" alt="" />
+          </div>
+          <div class="img-square">
+            <img src="./images/RLCS-stuff.webp" alt="" />
+          </div>
+        </div>
+        <a href="" class="button">see more</a>
+      </div>
       <div id="about-us-container">
         <p class="description-about-us">
           Psyonix had observed the popularity of Rocket League matches on Twitch
@@ -288,26 +365,26 @@
           id="youtube"
           ><i class="fa-brands fa-youtube"></i
         ></a>
-        </div>
-        <div id="image-icons">
+      </div>
+      <div id="image-icons">
+        <img
+          src="./images/pegi-game.webp"
+          alt="game for everyone"
+          id="pegi-game"
+        />
+        <div id="psyon">
           <img
-            src="./images/pegi-game.webp"
-            alt="game for everyone"
-            id="pegi-game"
+            src="./images/psyonix-logo.svg.png"
+            alt="psyonix logo"
+            id="psyon-logo"
           />
-          <div id="psyon">
-            <img
-              src="./images/psyonix-logo.svg.png"
-              alt="psyonix logo"
-              id="psyon-logo"
-            />
-            <p id="psyon-c">
-              © 2022 Psyonix LLC. Rocket League, Psyonix, and all related marks
-              and logos are registered trademarks or trademarks of Psyonix LLC.
-              All rights reserved.
-            </p>
-          </div>
+          <p id="psyon-c">
+            © 2022 Psyonix LLC. Rocket League, Psyonix, and all related marks
+            and logos are registered trademarks or trademarks of Psyonix LLC.
+            All rights reserved.
+          </p>
         </div>
+      </div>
     </footer>
     <script src="./script/main.js"></script>
   </body>
