@@ -1,12 +1,13 @@
 :root {
+    user-select: none;
+    scroll-behavior: smooth;
     --main-bg-color: #f99e1a;
+    --main-bg-second-color: #333;
 }
 
 html {
     box-sizing: border-box;
     font-size: 16px;
-    user-select: none;
-    scroll-behavior: smooth
 }
 
 *,
@@ -28,7 +29,7 @@ body header {
     height: 80px;
     background-color: var(--main-bg-color);
     z-index: 2;
-    border-bottom: 5px solid #333;
+    border-bottom: 5px solid var(--main-bg-second-color);
     box-shadow: 0 2px 10px #000000;
     top: 0;
 }
@@ -141,7 +142,7 @@ body {
 /* SHOW HIDE SUB-MENUS */
 .menu-beta {
     position: fixed;
-    right: -100%;
+    right: -150%;
     list-style: none;
     background-color: var(--main-bg-color);
     padding-inline-start: 20px;
@@ -162,6 +163,14 @@ body {
 /* MAIN */
 body main {
     height: 100%;
+}
+
+/*href positioning */
+#gallery-container::before {
+    content: " ";
+    display: block;
+    height: 90px;
+    margin-top: -90px;
 }
 
 /*MAIN BUTTON RULES*/
@@ -185,13 +194,15 @@ main .button {
 
 /*IMAGE BACKGROUND + LOGO*/
 #home-video-container {
+    overflow: hidden;
     position: relative;
-    height: 19.5em;
+    width: 100%;
+    height: 18em;
     border-bottom: 10px solid var(--main-bg-color);
 }
 
 #video-home {
-    scale: 1;
+    position: absolute;
     height: 100%;
 }
 
@@ -204,7 +215,7 @@ main .button {
 }
 
 /* arrow */
-#home-video-container::before {
+#container-info::before {
     content: " ";
     position: absolute;
     left: 50%;
@@ -212,14 +223,28 @@ main .button {
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-top: 30px solid var(--main-bg-color);
-    bottom: -30px;
+    top: 0;
 }
 
 /* QUICK DESCRIPTION SECTION */
 #container-info {
+    position: relative;
     width: 100%;
     height: auto;
     padding: 70px 0;
+}
+
+#container-info::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/fluo-neon-car.png");
+    background-repeat: no-repeat;
+    background-size: 20em;
+    opacity: 0.3;
 }
 
 #container-info .quickinfo {
@@ -232,11 +257,7 @@ main .button {
     text-align: justify;
     margin-top: 20px;
 }
-#container-info img {
-    position: absolute;
-    width: 20em;
-    opacity: 0.5;
-}
+
 /*NEWS SECTION */
 #news-container {
     height: auto;
@@ -255,7 +276,7 @@ main .button {
     text-align: justify;
     border: 1px solid black;
     overflow: hidden;
-    box-shadow: 5px 2px 50px #000000;
+    box-shadow: 5px 2px 50px black;
 }
 
 .card .image-container {
@@ -291,6 +312,7 @@ main .button {
     bottom: 20px;
     padding: 10px 30px;
     transform: translateX(-50%);
+    font-size: 1.8rem;
 }
 
 /* TOURNAMENTS */
@@ -310,13 +332,16 @@ main .button {
     text-align: justify;
     margin-top: 20px;
 }
+
 #tournament-container img {
     position: absolute;
     right: 0;
-    opacity: 0.5;
+    opacity: 0.3;
 }
+
 /* PLAYERS */
 #players-container {
+    position: relative;
     width: 100%;
     height: auto;
     padding: 70px 0;
@@ -332,11 +357,99 @@ main .button {
     text-align: justify;
     margin-top: 20px;
 }
-#players-container img {
+
+#players-container::after {
+    content: " ";
     position: absolute;
-    left: -4em;
-    opacity: 0.5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/rocket-league-green-yellow.gif");
+    background-repeat: no-repeat;
+    background-size: 15em;
+    opacity: 0.3;
 }
+
+/* GALLERY */
+#gallery-container {
+    position: relative;
+    width: 100%;
+}
+
+#gallery-container #images-container .img-square {
+    overflow: hidden;
+    display: none;
+    width: 6.4em;
+    height: 7em;
+    border: 1px solid #333;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#gallery-container #images-container .img-square img {
+    position: absolute;
+    width: 15em;
+    left: -5em;
+}
+
+/* Next & previous buttons */
+.slider-before, .slider-after {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 3rem;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--main-bg-second-color);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--main-bg-color);
+}
+
+/* Position the "next button" to the right */
+.slider-after {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+#slider-buttons {
+    text-align: center;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
 /* JOIN US */
 #join-us-container {
     position: relative;
@@ -355,6 +468,7 @@ main .button {
     text-align: justify;
     margin-top: 20px;
 }
+
 #join-us-container img {
     position: absolute;
     right: 0;
@@ -362,27 +476,7 @@ main .button {
     width: 15em;
     opacity: 0.5;
 }
-/* GALLERY */
-#gallery-container #images-container {
-    width: 95%;
-    margin: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    row-gap: 20px;
-}
-#gallery-container #images-container  .img-square {
-    overflow: hidden;
-    width: 6.4em;
-    height: 7em;
-    border: 1px solid #333;
-    position: relative;
-}
-#gallery-container #images-container  .img-square img {
-    position: absolute;
-    width: 15em;
-    left: -5em;
-}
+
 /*ABOUT*/
 #about-us-container {
     width: 100%;
@@ -406,7 +500,7 @@ main .button {
 footer {
     width: 100%;
     height: 350px;
-    background-color: #333;
+    background-color: var(--main-bg-second-color);
     border-top: 10px solid var(--main-bg-color);
 }
 
@@ -537,62 +631,107 @@ footer {
     /* MAIN */
     /* video section */
     #home-video-container {
-        height: 20em;
+        height: 19.3em;
         top: 10px;
         overflow: hidden;
     }
+
     #video-home {
         scale: 1.6;
         height: 100%;
         width: 100%;
     }
+
     /*info section */
     #container-info .quickinfo {
         margin-left: auto;
         margin-right: 15em;
     }
+
     #container-info img {
         opacity: 1;
     }
-    /* tournaments section */ 
+
+    /* tournaments section */
     #tournament-container .description-tourn {
         margin-right: auto;
         margin-left: 15em;
     }
+
     #tournament-container .button {
         left: 15em;
     }
-    #tournament-container img {
-        opacity: 1;
-    }
-    /* players section */ 
+
+    /* players section */
     #players-container .description-player {
         margin-right: 15em;
         margin-left: auto;
     }
+
     #players-container .button {
         left: 50%;
     }
-    #players-container img {
-        opacity: 1;
-    }
-    /*join us section */ 
+
+    /*join us section */
     #join-us-container .description-join-us {
         margin-right: auto;
         margin-left: 15em;
     }
+
     #join-us-container .button {
         left: 15em;
     }
-    #join-us-container img {
-        opacity: 1;
+
+    /*gallery*/
+    #gallery-container #images-container .img-square {
+        width: 50%;
     }
-    /* tournaments section */ 
-    #about-us-container .description-about-us  {
+
+    #gallery-container #images-container .img-square img {
+        position: absolute;
+        width: 100%;
+        scale: 1.3;
+        left: 0;
+    }
+
+    .slider-before {
+        left: 4em;
+    }
+
+    .slider-after {
+        right: 4em;
+    }
+
+    /* abous us section */
+    #about-us-container .description-about-us {
         margin-right: 15em;
         margin-left: auto;
     }
+
     #about-us-container .button {
         left: 50%;
+    }
+}
+
+/* IMGS ADJUSTMENTS */
+@media screen and (min-width: 1238px) {
+    #join-us-container img {
+        opacity: 1;
+    }
+
+    #tournament-container img {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1354px) {
+    #players-container::after {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1460px) {
+    #container-info::after {
+        opacity: 1;
     }
 }

@@ -42,7 +42,7 @@
               </li>
               <li>
                 <a
-                  href="./index.html#torunament-container"
+                  href="./index.html#tournament-container"
                   class="menu-beta-item"
                   >Info Tournaments</a
                 >
@@ -117,7 +117,7 @@
     </header>
     <main>
       <div id="home-video-container">
-        <video autoplay muted id="video-home">
+        <video autoplay loop muted id="video-home">
           <source src="./images/home-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -128,7 +128,6 @@
         />
       </div>
       <div id="container-info">
-        <img src="./images/fluo-neon-car.png" alt="rocket league fluo neon" />
         <p class="quickinfo">
           Rocket League is a vehicular soccer video game developed and published
           by Psyonix. Described as "soccer, but with rocket-powered cars",
@@ -243,10 +242,6 @@
         <a href="#" class="button">Learn more</a>
       </div>
       <div id="players-container">
-        <img
-          src="./images/rocket-league-green-yellow.gif"
-          alt="car rocket league brasilian"
-        />
         <p class="description-player">
           Rocket League has a relatively prominent esports scene, so there are a
           lot of Rocket League prodigies out there. Most of them are parts of
@@ -286,25 +281,34 @@
       </div>
       <div id="gallery-container">
         <div id="images-container">
-          <div class="img-square">
+          <div class="img-square fade">
             <img src="./images/nrg-trophy.webp" alt="" />
           </div>
-          <div class="img-square">
+          <div class="img-square fade">
             <img src="./images/rlcs-championship.jpg" alt="" />
           </div>
-          <div class="img-square">
+          <div class="img-square fade">
             <img src="./images/RLCS-Format-Overview.webp" alt="" />
           </div>
-          <div class="img-square">
+          <div class="img-square fade">
             <img src="./images/rocket-league-car-news.webp" alt="" />
           </div>
-          <div class="img-square">
+          <div class="img-square fade">
             <img src="./images/RLCS-stuff.webp" alt="" />
           </div>
         </div>
-        <a href="" class="button">see more</a>
+        <a class="slider-before" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="slider-after" onclick="plusSlides(1)">&#10095;</a>
       </div>
-      <div id="about-us-container">
+      <div id="slider-buttons">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
+      <a href="" class="button">see more</a>
+      <div id="about-us-container" class=>
         <p class="description-about-us">
           Psyonix had observed the popularity of Rocket League matches on Twitch
           and other live streaming platforms by early 2016 and were looking to
