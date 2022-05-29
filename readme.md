@@ -43,7 +43,7 @@ The program is written entirely in <code>JavaScript</code>, <code>HTML5</code> a
 ```
 Files structure
 	scripts/
-        main.mjs
+        main.js
 	styles/
 		styles.css
 	index.html
