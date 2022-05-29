@@ -98,7 +98,13 @@ body {
   padding-bottom: 2px;
   border-bottom: 1.5px solid black;
 }
-
+.menu-box>li>a {
+  display: block;
+  height: auto;
+  width: 100%;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid black;
+}
 .menu-beta>li {
   height: auto;
   width: 100%;
@@ -296,7 +302,7 @@ footer {
       border-bottom: 0;
   }
 
-  .menu-beta-toggle:hover {
+  .menu-beta-toggle:hover, header a:hover  {
       color: white;
   }
 

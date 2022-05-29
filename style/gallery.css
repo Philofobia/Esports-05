@@ -1,0 +1,340 @@
+:root {
+    user-select: none;
+    scroll-behavior: smooth;
+    --main-bg-color: #f99e1a;
+    --main-bg-second-color: #333;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a,
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* HEADER + BAR */
+body header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: var(--main-bg-color);
+    z-index: 2;
+    border-bottom: 5px solid var(--main-bg-second-color);
+    box-shadow: 0 2px 10px #000000;
+    top: 0;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+/* image header */
+#rl-header {
+    position: absolute;
+    height: 70px;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* checkbox position and size */
+#menu-toggle {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* 3 lines */
+#menu-toggle>span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    transition-duration: 0.25s;
+}
+
+#menu-toggle>span:nth-child(2) {
+    content: "";
+    top: 14px;
+}
+
+#menu-toggle>span:last-child {
+    content: "";
+    top: 27px;
+}
+
+/* to hide the whole navbar in mobile */
+.menu-box {
+    display: block;
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px 20px;
+    list-style: none;
+    background-color: var(--main-bg-color);
+}
+
+/* spaces and style top menu */
+.menu-box>li>div {
+    height: auto;
+    width: 100%;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid black;
+}
+.menu-box>li>a {
+    display: block;
+    height: auto;
+    width: 100%;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid black;
+}
+.menu-beta>li {
+    height: auto;
+    width: 100%;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid black;
+}
+
+/* CLICKING BOX */
+/* Changing shape to x */
+#menu-toggle.open>span:first-child {
+    top: 10px;
+    transform: rotate(45deg);
+    background-color: #000000;
+}
+
+#menu-toggle.open>span:nth-child(2) {
+    top: 10px;
+    transform: rotate(45deg);
+    background-color: #000000;
+}
+
+#menu-toggle.open>span:last-child {
+    top: 10px;
+    transform: rotate(-45deg);
+    background-color: #000000;
+}
+
+/* show menu */
+#menu-toggle.open+.menu-box {
+    top: 80px;
+    right: 0;
+    transition-duration: 0.25s;
+}
+
+.menu-beta-toggle {
+    cursor: pointer;
+}
+
+/* SHOW HIDE SUB-MENUS */
+.menu-beta {
+    position: fixed;
+    right: -150%;
+    list-style: none;
+    background-color: var(--main-bg-color);
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+    padding-bottom: 2px;
+}
+
+.menu-beta.active {
+    right: 0;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transition-duration: 0.25s;
+}
+
+/* HEADER FINISH */
+/*MAIN*/
+.gallery-container {
+    margin: 120px 0 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 100%;
+    max-width: 100%;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    opacity: 0.8;
+}
+.gallery-container:hover .column img:hover {
+    opacity: 1;
+}
+
+/*FOOTER*/
+footer {
+    width: 100%;
+    height: 350px;
+    background-color: var(--main-bg-second-color);
+    border-top: 10px solid var(--main-bg-color);
+}
+
+#social-container {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 50px;
+    text-align: center;
+}
+
+#social-container .socials {
+    display: inline-block;
+    height: 20px;
+    padding: 0 5px;
+}
+
+#social-container .fa-brands {
+    color: white;
+}
+
+#pegi-game {
+    height: 100px;
+    right: 10px;
+    top: 100px;
+}
+
+#image-icons {
+    position: relative;
+    top: 40px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    row-gap: 20px;
+}
+
+#psyon {
+    position: relative;
+    width: 310px;
+}
+
+#psyon #psyon-logo {
+    height: 120px;
+    position: absolute;
+    left: 0;
+}
+
+#psyon #psyon-c {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    font-size: 0.8rem;
+    color: #fff;
+    width: 200px;
+}
+
+/*TABLET COLUMN DOUBLE*/
+@media screen and (min-width: 600px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+        padding: 0 4px;
+    }
+}
+
+
+/*DESKTOP */
+@media screen and (min-width: 1024px) {
+
+    /*HEADER */
+    #menu-toggle,
+    #menu-toggle>span {
+        display: none;
+    }
+
+    #rl-header {
+        left: 20px;
+        transform: none;
+    }
+
+    /* normal menu */
+    .menu-box,
+    #menu-toggle.open+.menu-box {
+        position: absolute;
+        width: auto;
+        top: 30px;
+        left: 200px;
+        background-color: transparent;
+        font-size: 2rem;
+    }
+
+    .menu-box>li {
+        display: inline-block;
+        padding-right: 5px;
+    }
+
+    .menu-box>li>div {
+        border-bottom: 0;
+    }
+
+    .menu-beta-toggle:hover, header a:hover {
+        color: white;
+    }
+
+    /* sub-menu*/
+    .menu-beta {
+        visibility: hidden;
+        opacity: 0;
+        top: 82px;
+        right: auto;
+        background-color: var(--main-bg-color);
+        border: 1px solid #333;
+        box-shadow: 1px 1px 10px #333;
+    }
+
+    .menu-beta-toggle:hover+.menu-beta,
+    .menu-beta:hover {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.25s ease-in;
+    }
+
+    .menu-beta>li {
+        border-bottom: none;
+        font-size: 1.5rem;
+        padding: 0;
+    }
+
+    .menu-beta-item:hover {
+        color: white;
+    }
+
+    /* HEADER FINISH */
+    /*MAIN*/
+    .column {
+        flex: 25%;
+        max-width: 25%;
+    }
+}
